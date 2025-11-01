@@ -1,0 +1,15 @@
+# Flutter
+.dart_tool/
+.packages
+.flutter-plugins
+.flutter-plugins-dependencies
+.idea/
+.vscode/
+build/
+ios/Flutter/.symlinks
+ios/Pods/
+ios/Podfile.lock
+android/.gradle/
+android/app/debug
+android/app/profile
+android/app/release
