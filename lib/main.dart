@@ -113,14 +113,16 @@ class LevelsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () async {
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (bool didPop, result) {
+        // When a pop is invoked (e.g. system back), navigate to Home and
+        // prevent the default automatic pop by disabling canPop above.
         Navigator.pushAndRemoveUntil(
           context,
           MaterialPageRoute(builder: (context) => const HomePage()),
           (route) => false,
         );
-        return false;
       },
       child: Scaffold(
         appBar: AppBar(
@@ -194,14 +196,14 @@ class LevelOne extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () async {
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (bool didPop, result) {
         Navigator.pushAndRemoveUntil(
           context,
           MaterialPageRoute(builder: (context) => const LevelsPage()),
           (route) => false,
         );
-        return false;
       },
       child: Scaffold(
         appBar: AppBar(
